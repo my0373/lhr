@@ -1,0 +1,16 @@
+*******************************************************************************
+
+Welcome to {{ ansible_host }} / {{ ansible_hostname }}
+
+Ansible:
+   Last Ansible run: {{ ansible_date_time.date }} @ {{ ansible_date_time.time }}
+
+Network interfaces:
+	Device name: {{ ansible_default_ipv4.alias }}
+		     {{ ansible_default_ipv4.address }} / {{ ansible_default_ipv4.prefix }}
+	             {{ ansible_default_ipv4.macaddress }} / {{ ansible_default_ipv4.type }}
+
+Security:
+   Apparmor: {{ ansible_apparmor.status }}
+
+*******************************************************************************

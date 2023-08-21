@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    width: 80%;
+    align: center;
+    
+}
+
+
+
+html {
+    display: table;
+    margin: auto;
+    
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+. {
+    font: 200 32pt Frutiger Next LT W05 Regular,Open Sans,Arial,sans-serif;
+    align: center;
+    margin: auto;
+}
+
+div {
+    margin: auto;
+}
+body {
+    background-color: white;
+    text-align: center;
+    
+    
+  }
+
+table {
+    width: 2048px;
+    align: center;
+    text-align: center;
+    border: 1px solid;
+    
+
+}
+img#mainimg {
+    height: 300px;
+    margin: 50px;
+}
+
+h1 {
+    font-size: 120px;
+    margin: 20px;
+}
+img.tailfin {
+    
+        border: 0px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 40px;
+    
+}
+
+tr.trheader {
+    font-weight: 800;
+    font-size: 60px;
+    align: center;
+    margin: auto;
+
+}
+
+td {
+    font-size: 20px;
+}

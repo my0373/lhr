@@ -1,0 +1,39 @@
+---
+- name: Reset the MOTD back to the default
+  hosts: rpis
+  tasks:
+    - ping:
+    - name: Install apache httpd
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      become: yes
+
+    - name: Reset the MOTD back to the factory default
+      ansible.builtin.template:
+        src: ./templates/site/index.j2
+        dest: /var/www/html/index.html
+        backup: yes
+      become: yes
+
+    - name: Copy other supporting files
+      copy:
+        src: ./templates/site/
+        dest: /var/www/html/static/
+      become: yes
+
+    - name: apache2 service enabled
+      ansible.builtin.service:
+        name: apache2
+        enabled: true
+        state: started
+      become: yes
+
+    - name: open firewall
+      community.general.ufw:
+        rule: allow
+        port: 80
+        proto: tcp
+      ignore_errors: yes
+
+
