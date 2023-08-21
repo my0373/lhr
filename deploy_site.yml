@@ -29,11 +29,7 @@
         state: started
       become: yes
 
-    - name: open firewall
-      community.general.ufw:
-        rule: allow
-        port: 80
-        proto: tcp
-      ignore_errors: yes
+    - debug:
+        msg: "Site deployed at http://{{ansible_host}}/"
 
 
