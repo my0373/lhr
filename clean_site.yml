@@ -1,0 +1,27 @@
+---
+- name: Remove the website from the RPI 
+  hosts: rpis
+  tasks:
+    - name: Stop the apache2 service 
+      ansible.builtin.service:
+        name: apache2
+        enabled: true
+        state: stopped 
+      become: yes
+
+    - name: Uninstall apache httpd
+      ansible.builtin.apt:
+        name: apache2
+        state: absent
+      become: yes
+
+    - name: Purge web content from filesystem 
+      ansible.builtin.file:
+        path: /var/www/html/ 
+        state: absent
+      become: yes
+
+    
+
+  
+

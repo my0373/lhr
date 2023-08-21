@@ -9,14 +9,14 @@
         state: present
       become: yes
 
-    - name: Reset the MOTD back to the factory default
+    - name: Deploy the index site 
       ansible.builtin.template:
         src: ./templates/site/index.j2
         dest: /var/www/html/index.html
         backup: yes
       become: yes
 
-    - name: Copy other supporting files
+    - name: Deploy supporting files for the site 
       copy:
         src: ./templates/site/
         dest: /var/www/html/static/
